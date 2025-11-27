@@ -1,6 +1,8 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+"use client"
+import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "./Navbar/logo";
+import { motion } from 'framer-motion';
 
 const currentYear = new Date().getFullYear();
 
@@ -18,10 +20,11 @@ const socialLinks = [
   { href: "mailto:contact@saddam.dev", icon: Mail, label: "Email" },
 ];
 
+
 export default function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
 
           {/* Brand & Description */}
@@ -89,16 +92,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border/40">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>
-              © {currentYear} Saddam; All rights reserved.
-            </p>
-            <p className="text-xs opacity-75">
-              Crafted with <span className="text-red-500">♥</span> using Next.js & Tailwind
-            </p>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="border-t border-border/50 mt-4 py-4 text-center text-muted-foreground"
+        >
+          <p className="flex items-center justify-center">
+            © {currentYear} Saddam Hossain. Made with{' '}
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="mx-1 text-red-500"
+            >
+              <Heart className="h-4 w-4 fill-current" />
+            </motion.span>
+            and lots of coffee.
+          </p>
+        </motion.div>
       </div>
     </footer>
   );
