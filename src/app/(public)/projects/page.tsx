@@ -1,62 +1,82 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import Project from "@/components/modules/Projects/Project";
 
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import Image from "next/image";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Analytics Dashboard",
-      description: "A comprehensive analytics platform with real-time data visualization, built with React, Node.js, and MongoDB. Features include custom dashboards, data export, and team collaboration.",
-      image: project1,
-      tags: ["React", "Node.js", "MongoDB", "Chart.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      id: "cryptoprotfolio",
+      title: "CryptoProtfolio",
+      description:
+        "A comprehensive cryptocurrency portfolio management application built with React and Shadcn/ui for tracking investments and market trends.",
+      image: "https://res.cloudinary.com/dgntsaro7/image/upload/v1761811601/cabro_reqey8.png",
+      tags: ["React", "Shadcn/ui", "TypeScript", "TailwindCSS"],
+      liveUrl: "https://cryptoprotfolio.com",
+      githubUrl: "https://cryptoprotfolio.com", // if private, you can omit
+      color: "from-green-400 to-blue-500",
+      year: "2025",
+      category: "React",
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-featured online store with product management, cart functionality, payment integration, and order tracking. Built with Next.js and Stripe.",
-      image: project2,
-      tags: ["Next.js", "Prisma", "PostgreSQL", "Stripe"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      id: "cabro",
+      title: "Cabro",
+      description:
+        "A modern cab booking platform built with React and Shadcn/ui, featuring lazy loading for optimized performance and numerous functions including real-time tracking, booking management, and user interface components.",
+      image: "https://res.cloudinary.com/dgntsaro7/image/upload/v1761811601/cabro_reqey8.png",
+      tags: ["React", "Shadcn/ui", "TypeScript", "TailwindCSS"],
+      liveUrl: "https://cabro.vercel.app",
+      githubUrl: "https://cabro.vercel.app", // if private, you can omit
+      color: "from-green-400 to-blue-500",
+      year: "2025",
+      category: "React",
     },
     {
-      title: "Task Management App",
-      description: "Modern task management application with drag-and-drop functionality, team collaboration, and real-time updates using WebSockets.",
-      image: project3,
-      tags: ["React", "Express", "MongoDB", "Socket.io"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      id: "ecoverabd",
+      title: "EcoveraBD",
+      description:
+        "A professional Sourcing and eco-friendly apparel website built with Next.js. It showcases products, company profile, services, and integrates SEO optimization for global reach.",
+      image: "https://res.cloudinary.com/dgntsaro7/image/upload/v1764414306/e_tuirda.png",
+      tags: ["Next.js", "TypeScript", "React", "TailwindCSS", "framer-motion"],
+      liveUrl: "https://ecoverabd.com",
+      githubUrl: "https://github.com/saddamc", // if private, you can omit
+      color: "from-green-400 to-blue-500",
+      year: "2025",
+      category: "Next.js",
     },
     {
-      title: "Social Media Platform",
-      description: "A social networking site with user profiles, posts, comments, likes, and real-time chat functionality. Built with the MERN stack.",
-      image: project1,
-      tags: ["React", "Node.js", "MongoDB", "Redis"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      id: "ecommerce-platform",
+      title: "Dashboard / SaaS App",
+      description:
+        "This project is a modern React + Vite web app with Firebase authentication, Stripe payments, Tailwind/MUI styling, and features for booking, e-commerce, or dashboard analytics.",
+      image:
+        "https://res.cloudinary.com/drtzgyetn/image/upload/v1757156003/Petco_unkdw6.jpg",
+      tech: ["React", "Node.js", "MongoDB", "Stripe Payment"],
+      liveUrl: "https://assignment-pets.web.app",
+      githubUrl: "https://github.com/saddamc/Assignment-12-client-pets",
+      color: "from-purple-400 to-pink-500",
+      year: "2023",
+      category: "Mern Stack",
     },
     {
-      title: "Blog CMS",
-      description: "Content management system for bloggers with markdown support, SEO optimization, and analytics integration.",
-      image: project2,
-      tags: ["Next.js", "MongoDB", "MDX", "Vercel"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
-    },
-    {
-      title: "Weather App",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and weather alerts using third-party APIs.",
-      image: project3,
-      tags: ["React", "OpenWeather API", "Mapbox"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      id: "task-management",
+      title: "Modern React web application",
+      description:
+        "This is a modern React web application project built in TypeScript, using Vite as a bundler. It has Tailwind CSS for styling and uses Radix UI components for base UI elements. It leverages Redux Toolkit for state management, React Router for routing, and React Hook Form with Zod for form management and validation. The project also emphasizes developer experience with ESLint and utilities for notifications, themes, and animations.",
+      image:
+        "https://res.cloudinary.com/drtzgyetn/image/upload/v1757168029/Book_ocb8rn.jpg",
+      tags: [
+        "React",
+        "TypeScript",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "MongoDB",
+        "Node.js",
+      ],
+      liveUrl: "https://book-4-woad.vercel.app/books",
+      githubUrl: "https://github.com/saddamc/book-frontend-4",
+      color: "from-cyan-400 to-blue-500",
+      year: "2023",
+      category: "Frontend",
     },
   ];
 
@@ -81,80 +101,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="group overflow-hidden shadow-soft hover:shadow-strong transition-smooth animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Project Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-smooth group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-smooth">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full transition-smooth"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Button>
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="transition-smooth"
-                      >
-                        <Github className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Project projects={projects} />
 
     </div>
   );

@@ -1,0 +1,257 @@
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 20px 40px -8px rgba(0, 0, 0, 0.25), 
+    0 8px 16px -4px rgba(0, 0, 0, 0.1),
+    0 4px 8px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover:hover {
+  box-shadow: 
+    0 30px 60px -12px rgba(0, 0, 0, 0.35), 
+    0 12px 24px -6px rgba(0, 0, 0, 0.15),
+    0 6px 12px -3px rgba(0, 0, 0, 0.1);
+}
+
+/*! Skill Cards Same Style with Different Colors */
+.skill-card-wrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.skill-card-wrapper > * {
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: visible !important;
+  border-radius: 16px;
+}
+
+.skill-card-wrapper:hover > * {
+  transform: translateY(-8px);
+}
+
+/* Frontend Card - Purple/Pink (Reduced Shadow) */
+.skill-card-wrapper:nth-child(1):hover > * {
+  box-shadow: 
+    0 4px 15px rgba(147, 51, 234, 0.4),
+    0 8px 25px rgba(219, 39, 119, 0.3),
+    0 12px 35px rgba(168, 85, 247, 0.2);
+  border-color: rgba(147, 51, 234, 0.6);
+}
+
+.skill-card-wrapper:nth-child(1):hover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  right: 15%;
+  height: 15px;
+  background: radial-gradient(ellipse at center,
+    rgba(147, 51, 234, 0.3) 0%,
+    rgba(219, 39, 119, 0.2) 40%,
+    rgba(168, 85, 247, 0.1) 70%,
+    transparent 100%
+  );
+  filter: blur(6px);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Backend Card - Cyan/Blue (Reduced Shadow) */
+.skill-card-wrapper:nth-child(2):hover > * {
+  box-shadow: 
+    0 4px 15px rgba(6, 182, 212, 0.4),
+    0 8px 25px rgba(59, 130, 246, 0.3),
+    0 12px 35px rgba(34, 211, 238, 0.2);
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+.skill-card-wrapper:nth-child(2):hover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  right: 15%;
+  height: 15px;
+  background: radial-gradient(ellipse at center,
+    rgba(6, 182, 212, 0.3) 0%,
+    rgba(59, 130, 246, 0.2) 40%,
+    rgba(34, 211, 238, 0.1) 70%,
+    transparent 100%
+  );
+  filter: blur(6px);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* MERN Stack Card - Green/Teal (Same style as Journey) */
+.skill-card-wrapper:nth-child(3):hover > * {
+  box-shadow: 
+    0 6px 25px rgba(34, 197, 94, 0.6),
+    0 12px 50px rgba(16, 185, 129, 0.5),
+    0 18px 70px rgba(20, 184, 166, 0.4);
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.skill-card-wrapper:nth-child(3):hover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  right: 10%;
+  height: 20px;
+  background: radial-gradient(ellipse at center,
+    rgba(34, 197, 94, 0.5) 0%,
+    rgba(16, 185, 129, 0.4) 40%,
+    rgba(20, 184, 166, 0.3) 70%,
+    transparent 100%
+  );
+  filter: blur(8px);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+/* Problem Solving Card - Orange/Yellow (Same style as Journey) */
+.skill-card-wrapper:nth-child(4):hover > * {
+  box-shadow: 
+    0 6px 25px rgba(245, 158, 11, 0.6),
+    0 12px 50px rgba(249, 115, 22, 0.5),
+    0 18px 70px rgba(251, 191, 36, 0.4);
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+.skill-card-wrapper:nth-child(4):hover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  right: 10%;
+  height: 20px;
+  background: radial-gradient(ellipse at center,
+    rgba(245, 158, 11, 0.5) 0%,
+    rgba(249, 115, 22, 0.4) 40%,
+    rgba(251, 191, 36, 0.3) 70%,
+    transparent 100%
+  );
+  /* filter: blur(8px); */
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+/* Enhanced backdrop blur */
+.journey-card:hover,
+.skill-card-wrapper:hover > *,
+.stat-card:hover {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Timeline connecting lines */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.connecting-line .pulse-line {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: opacity, transform;
+}
+
+/* Light mode adjustments for timeline */
+@media (prefers-color-scheme: light) {
+  .connecting-line {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+  }
+  .connecting-line .pulse-line {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .journey-card:hover,
+  .skill-card-wrapper:hover > * {
+    transform: translateY(-6px);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Reduce shadow intensity on mobile */
+  .journey-card:hover,
+  .skill-card-wrapper:nth-child(1):hover > *,
+  .skill-card-wrapper:nth-child(2):hover > *,
+  .skill-card-wrapper:nth-child(3):hover > *,
+  .skill-card-wrapper:nth-child(4):hover > * {
+    box-shadow: 
+      0 4px 15px rgba(147, 51, 234, 0.5),
+      0 8px 30px rgba(219, 39, 119, 0.4);
+  }
+}
+
+
+.aboutMe-card {
+  /* Rounded corners */
+  border-radius: 1rem; /* same as rounded-2xl */
+
+  /* Gradient background */
+  background: linear-gradient(
+    to right, 
+    #cb78ca, 
+    #6a8bb9, 
+    #41d4ff
+  );
+
+  /* Text color */
+  color: white;
+
+  /* Even shadow around all sides */
+  /* box-shadow: 0 0 20px rgba(204, 189, 189, 0.938),
+              0 0 40px rgba(106, 139, 185, 0.3),
+              0 0 60px rgba(65, 212, 255, 0.2); */
+  box-shadow: 20px;
+
+  /* Transition for smooth hover */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover state: stronger shadow */
+.aboutMe-card:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 110, 0.6),
+              0 0 30px rgba(106, 139, 185, 0.5),
+              0 0 50px rgba(65, 212, 255, 0.4);
+}
+/* contact card */
+.contactSection {
+  border:none;
+  border-radius: 16px;
+  /* padding: 1.5rem; */
+  color: #fff;
+  background: #e3e3e9;
+  /* box-shadow: 0 0 20px rgba(232, 155, 231, 0.6); */
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 4px;
+}
+
+.contactSection:hover {
+  box-shadow: 
+    -10px 0 15px rgba(207, 44, 205, 0.6),   /* shadow on right side */
+    12px 0 15px rgba(192, 84, 65, 0.5),  /* shadow on left side */
+    0 10px 15px rgba(169, 58, 184, 0.4),   /* bottom shadow */
+    0 -10px 10px rgba(179, 75, 144, 0.4);   /* bottom shadow */
+
+}

@@ -16,8 +16,8 @@ const footerLinks = [
 const socialLinks = [
   { href: "https://github.com/saddamc", icon: Github, label: "GitHub" },
   { href: "https://www.linkedin.com/in/saddamdev", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
-  { href: "mailto:contact@saddam.dev", icon: Mail, label: "Email" },
+  { href: "https://x.com/saddam_kaium", icon: Twitter, label: "Twitter" },
+  { href: "mailto:saddam13bd@gmail.com", icon: Mail, label: "Email" },
 ];
 
 
@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
 
           {/* Brand & Description */}
-          <div className="md:col-span-4 space-y-5">
+          <div className="md:col-span-4 ">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               <Logo />
             </h3>
@@ -64,7 +64,7 @@ export default function Footer() {
               className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
             >
               <Mail className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
-              contact@saddam.dev
+              saddam13bd@gmail.com
             </a>
           </div>
 
