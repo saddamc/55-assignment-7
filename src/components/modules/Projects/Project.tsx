@@ -125,14 +125,23 @@ export default function Project({ projects }: { projects: Project[] }) {
                                </Card>
          
                                <div className="flex flex-wrap gap-2 mb-6">
-                                 {project.tech.map((tech: string) => (
-                                   <Badge
+                                 {project.tech.map((tech: string, index: number) => (
+                                   <motion.div
                                      key={tech}
-                                     variant="secondary"
-                                     className="bg-secondary hover:bg-secondary/80 text-secondary-foreground"
+                                     initial={{ opacity: 0, scale: 0.8 }}
+                                     whileInView={{ opacity: 1, scale: 1 }}
+                                     transition={{ duration: 0.3, delay: index * 0.1 }}
+                                     viewport={{ once: true }}
+                                     whileHover={{ scale: 1.1 }}
+                                     whileTap={{ scale: 0.95 }}
                                    >
-                                     {tech}
-                                   </Badge>
+                                     <Badge
+                                       variant="secondary"
+                                       className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-lg transition-all duration-300 px-3 py-1 backdrop-blur-sm"
+                                     >
+                                       <span className="text-sm font-medium text-blue-700 dark:text-blue-300">{tech}</span>
+                                     </Badge>
+                                   </motion.div>
                                  ))}
                                </div>
          
